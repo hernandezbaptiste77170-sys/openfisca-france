@@ -2676,11 +2676,13 @@ class quaenv(Variable):
         pg = parameters(period).impot_revenu.credits_impots.transition_energetique.plafond_depenses.plafond_global
 
         cases_depenses = [
-            'f7aa', 'f7ad', 'f7af', 'f7ah', 'f7ak', 'f7al', 'f7am', 'f7an', 'f7aq', 'f7ar', 'f7as', 'f7av', 'f7ax', 'f7ay', 'f7az',
+            'f7aa', 'f7ad', 'f7af', 'f7ah', 'f7ak', 'f7al', 'f7an', 'f7aq', 'f7ar', 'f7as', 'f7av', 'f7ax', 'f7ay', 'f7az',
             'f7bb', 'f7bc', 'f7bd', 'f7be', 'f7bf', 'f7bh', 'f7bk', 'f7bl', 'f7bm', 'f7cb',
             ]
         depenses_transition_energetique = sum([foyer_fiscal(case, period) for case in cases_depenses])
-        cases_depense_taux_reduit = ['f7ao', 'f7ap']
+        # Convergence IPP : à partir de 2018, l'isolation des parois vitrées (7AM) passe au taux réduit
+        # (isolation_thermique_parois_vitrees = 0,15 dans le barème IPP ; l'OFF appliquait 0,30 par erreur).
+        cases_depense_taux_reduit = ['f7am', 'f7ao', 'f7ap']
         depenses_transition_energetique_taux_reduit = sum([foyer_fiscal(case, period) for case in cases_depense_taux_reduit])
 
         plafond_depenses_energetiques = pg.personne_seule * (1 + maries_ou_pacses) + pg.pac * personnes_a_charge
