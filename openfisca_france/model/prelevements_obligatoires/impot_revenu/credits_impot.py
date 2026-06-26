@@ -2095,9 +2095,10 @@ class quaenv(Variable):
         f7wg = foyer_fiscal('f7wg_2013', period)
         f7wh = foyer_fiscal('f7wh', period)
         P = parameters(period).impot_revenu.credits_impots.quaenv
+        pg = parameters(period).impot_revenu.credits_impots.transition_energetique.plafond_depenses.plafond_global
 
         n = nb_pac_majoration_plafond
-        max0 = P.max * (1 + maries_ou_pacses) + P.pac1 * (n >= 1) + P.pac2 * (n >= 2) + P.pac2 * (max_(n - 2, 0))
+        max0 = pg.personne_seule * (1 + maries_ou_pacses) + pg.pac * (n >= 1) + pg.pac_2 * (n >= 2) + pg.pac_3 * (max_(n - 2, 0))
 
         max1 = max_(0, max0 - f7wf)
         max2 = max_(0, max1 - f7wg)
@@ -2120,8 +2121,9 @@ class quaenv(Variable):
         f7wh = foyer_fiscal('f7wh', period)
         f7wq = foyer_fiscal('f7wq', period)
         P = parameters(period).impot_revenu.credits_impots.quaenv
+        pg = parameters(period).impot_revenu.credits_impots.transition_energetique.plafond_depenses.plafond_global
 
-        max0 = P.max * (1 + maries_ou_pacses) + P.pac1 * nb_pac_majoration_plafond
+        max0 = pg.personne_seule * (1 + maries_ou_pacses) + pg.pac * nb_pac_majoration_plafond
 
         max1 = max_(0, max0 - f7wf)
         max2 = max_(0, max1 - f7wg)
@@ -2153,8 +2155,9 @@ class quaenv(Variable):
         f7se = foyer_fiscal('f7se_2015', period)
         rfr = foyer_fiscal('rfr', period)
         P = parameters(period).impot_revenu.credits_impots.quaenv
+        pg = parameters(period).impot_revenu.credits_impots.transition_energetique.plafond_depenses.plafond_global
 
-        max0 = P.max * (1 + maries_ou_pacses) + P.pac1 * nb_pac_majoration_plafond
+        max0 = pg.personne_seule * (1 + maries_ou_pacses) + pg.pac * nb_pac_majoration_plafond
 
         max1 = max_(0, max0 - f7wf)
         max2 = max_(0, max1 - f7se)
@@ -2197,8 +2200,9 @@ class quaenv(Variable):
         f7sh = foyer_fiscal('f7sh_2015', period)
         rfr = foyer_fiscal('rfr', period)
         P = parameters(period).impot_revenu.credits_impots.quaenv
+        pg = parameters(period).impot_revenu.credits_impots.transition_energetique.plafond_depenses.plafond_global
 
-        max0 = P.max * (1 + maries_ou_pacses) + P.pac1 * nb_pac_majoration_plafond
+        max0 = pg.personne_seule * (1 + maries_ou_pacses) + pg.pac * nb_pac_majoration_plafond
 
         max1 = max_(0, max0 - f7wf)
         max2 = max_(0, max1 - f7se)
@@ -2258,8 +2262,9 @@ class quaenv(Variable):
         quaenv_bouquet = foyer_fiscal('quaenv_bouquet', period)
         rfr = foyer_fiscal('rfr', period)
         P = parameters(period).impot_revenu.credits_impots.quaenv
+        pg = parameters(period).impot_revenu.credits_impots.transition_energetique.plafond_depenses.plafond_global
 
-        max0 = P.max * (1 + maries_ou_pacses) + P.pac1 * nb_pac_majoration_plafond
+        max0 = pg.personne_seule * (1 + maries_ou_pacses) + pg.pac * nb_pac_majoration_plafond
         maxi1 = max_(0, max0 - f7ty)
         maxi2 = max_(0, maxi1 - f7tx)
         maxi3 = max_(0, maxi2 - f7tw)
@@ -2341,8 +2346,9 @@ class quaenv(Variable):
         quaenv_bouquet = foyer_fiscal('quaenv_bouquet', period)
         rfr = foyer_fiscal('rfr', period)
         P = parameters(period).impot_revenu.credits_impots.quaenv
+        pg = parameters(period).impot_revenu.credits_impots.transition_energetique.plafond_depenses.plafond_global
 
-        max0 = P.max * (1 + maries_ou_pacses) + P.pac1 * nb_pac_majoration_plafond
+        max0 = pg.personne_seule * (1 + maries_ou_pacses) + pg.pac * nb_pac_majoration_plafond
         max1 = max_(0, max0 - quaenv_bouquet * (f7ss + f7st) - not_(quaenv_bouquet) * (f7ss + f7st + f7sv))
         max2 = max_(0, max1 - quaenv_bouquet * (f7sn + f7sr + f7sq) - not_(quaenv_bouquet) * (f7sn + f7sq + f7sr))
         max3 = max_(0, max2 - quaenv_bouquet * (f7sv) - not_(quaenv_bouquet) * (f7se))
@@ -2428,6 +2434,7 @@ class quaenv(Variable):
         nb_pac2 = foyer_fiscal('nb_pac2', period)
         quaenv_bouquet = foyer_fiscal('quaenv_bouquet', period)
         P = parameters(period).impot_revenu.credits_impots.quaenv
+        pg = parameters(period).impot_revenu.credits_impots.transition_energetique.plafond_depenses.plafond_global
 
         depenses_transition_energetique = (
             f7sa
@@ -2456,8 +2463,8 @@ class quaenv(Variable):
             )
 
         max0 = (
-            P.max * (1 + maries_ou_pacses)
-            + P.pac1 * nb_pac2
+            pg.personne_seule * (1 + maries_ou_pacses)
+            + pg.pac * nb_pac2
             )
 
         max00 = max_(0, max0 - depenses_transition_energetique)
@@ -2581,6 +2588,7 @@ class quaenv(Variable):
         nb_pac2 = foyer_fiscal('nb_pac2', period)
         quaenv_bouquet = foyer_fiscal('quaenv_bouquet', period)
         P = parameters(period).impot_revenu.credits_impots.quaenv
+        pg = parameters(period).impot_revenu.credits_impots.transition_energetique.plafond_depenses.plafond_global
 
         depenses_transition_energetique_bouquet_2ans_2014_part2 = (
             f7sa + f7sb + f7sc + f7wb + f7rg + f7vh + f7rh + f7ri + f7wu + f7rj + f7rk + f7rl
@@ -2600,7 +2608,7 @@ class quaenv(Variable):
             + depenses_transition_energetique_2015
             )
 
-        max0 = P.max * (1 + maries_ou_pacses) + P.pac1 * nb_pac2
+        max0 = pg.personne_seule * (1 + maries_ou_pacses) + pg.pac * nb_pac2
         max00 = max_(0, max0 - depenses_transition_energetique)
         max1 = max_(0, max00 - quaenv_bouquet * (f7sd + f7se + f7wc + f7vg + f7wt + f7sn + f7sp + f7sr + f7ss + f7sq + f7st) - not_(quaenv_bouquet) * (max00))
         credit_quaenv_bouquet_2ans = (
@@ -2627,7 +2635,8 @@ class quaenv(Variable):
         maries_ou_pacses = foyer_fiscal('maries_ou_pacses', period)
         nb_pac2 = foyer_fiscal('nb_pac2', period)
         P = parameters(period).impot_revenu.credits_impots.quaenv
-        max0 = P.max * (1 + maries_ou_pacses) + P.pac1 * nb_pac2
+        pg = parameters(period).impot_revenu.credits_impots.transition_energetique.plafond_depenses.plafond_global
+        max0 = pg.personne_seule * (1 + maries_ou_pacses) + pg.pac * nb_pac2
 
         cases_depenses = [
             'f7aa_2016', 'f7ad', 'f7af', 'f7ah', 'f7ak', 'f7al', 'f7am', 'f7an', 'f7aq', 'f7ar', 'f7av', 'f7ax',
@@ -2645,13 +2654,14 @@ class quaenv(Variable):
         maries_ou_pacses = foyer_fiscal('maries_ou_pacses', period)
         personnes_a_charge = foyer_fiscal('nb_pac2', period)
         P = parameters(period).impot_revenu.credits_impots.quaenv
+        pg = parameters(period).impot_revenu.credits_impots.transition_energetique.plafond_depenses.plafond_global
 
         cases_depenses = [
             'f7ad', 'f7af', 'f7ah', 'f7ak', 'f7al', 'f7am', 'f7an', 'f7aq', 'f7ar', 'f7av', 'f7ax', 'f7ay', 'f7az',
             'f7bb', 'f7bc', 'f7bd', 'f7be', 'f7bf', 'f7bh', 'f7bk', 'f7bl', 'f7cb',
             ]
         depenses_transition_energetique = sum([foyer_fiscal(case, period) for case in cases_depenses])
-        plafond_depenses_energetiques = P.max * (1 + maries_ou_pacses) + P.pac1 * personnes_a_charge
+        plafond_depenses_energetiques = pg.personne_seule * (1 + maries_ou_pacses) + pg.pac * personnes_a_charge
 
         return P.taux30 * min_(plafond_depenses_energetiques, depenses_transition_energetique)
 
@@ -2663,6 +2673,7 @@ class quaenv(Variable):
         maries_ou_pacses = foyer_fiscal('maries_ou_pacses', period)
         personnes_a_charge = foyer_fiscal('nb_pac2', period)
         P = parameters(period).impot_revenu.credits_impots.quaenv
+        pg = parameters(period).impot_revenu.credits_impots.transition_energetique.plafond_depenses.plafond_global
 
         cases_depenses = [
             'f7aa', 'f7ad', 'f7af', 'f7ah', 'f7ak', 'f7al', 'f7am', 'f7an', 'f7aq', 'f7ar', 'f7as', 'f7av', 'f7ax', 'f7ay', 'f7az',
@@ -2672,7 +2683,7 @@ class quaenv(Variable):
         cases_depense_taux_reduit = ['f7ao', 'f7ap']
         depenses_transition_energetique_taux_reduit = sum([foyer_fiscal(case, period) for case in cases_depense_taux_reduit])
 
-        plafond_depenses_energetiques = P.max * (1 + maries_ou_pacses) + P.pac1 * personnes_a_charge
+        plafond_depenses_energetiques = pg.personne_seule * (1 + maries_ou_pacses) + pg.pac * personnes_a_charge
         plafond_depenses_energetiques_taux_reduit = max_(0, plafond_depenses_energetiques - depenses_transition_energetique)
 
         return (
@@ -2688,6 +2699,7 @@ class quaenv(Variable):
         maries_ou_pacses = foyer_fiscal('maries_ou_pacses', period)
         personnes_a_charge = foyer_fiscal('nb_pac2', period)
         P = parameters(period).impot_revenu.credits_impots.quaenv
+        pg = parameters(period).impot_revenu.credits_impots.transition_energetique.plafond_depenses.plafond_global
 
         cases_depenses = [
             'f7aa', 'f7ad', 'f7af', 'f7ah', 'f7ak', 'f7al', 'f7ar', 'f7as', 'f7av', 'f7ax', 'f7ay', 'f7az',
@@ -2696,7 +2708,7 @@ class quaenv(Variable):
         depenses_transition_energetique = sum([foyer_fiscal(case, period) for case in cases_depenses])
         f7bq = foyer_fiscal('f7bq', period)
 
-        plafond = P.max * (1 + maries_ou_pacses) + P.pac1 * personnes_a_charge
+        plafond = pg.personne_seule * (1 + maries_ou_pacses) + pg.pac * personnes_a_charge
         plafondint = min_(plafond, f7bq)
         plafond_ordinaire = (plafond - plafondint)
 
