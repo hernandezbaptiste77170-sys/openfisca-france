@@ -2125,8 +2125,8 @@ def formula_2025_01_01(foyer_fiscal, period, parameters):
     '''
     Calcul de la réduction d'impôt pour investissements outre-mer dans le cadre d'une entreprise
     '''
-    P = parameters(period).impot_revenu.calcul_reductions_impots.outremer_investissement.doment.retrocession
-    PP = parameters(period).impot_revenu.calcul_reductions_impots.outremer_investissement
+    P15 = parameters('2015').impot_revenu.calcul_reductions_impots.outremer_investissement.doment.retrocession
+    PP15 = parameters('2015).impot_revenu.calcul_reductions_impots.outremer_investissement
 
     fhgs = foyer_fiscal('fhgs', period)  # Report 2020
     fhhs = foyer_fiscal('fhhs', period)  # Report 2021
