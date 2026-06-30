@@ -2171,8 +2171,8 @@ def formula_2025_01_01(foyer_fiscal, period, parameters):
     
     propre_765 = (fhgw + fhhw + fhiw + fhjw + fhkw + fhlw)
 
-    ri_propre = (min_(PP.plafond, propre_306)
-                 + min_(PP.plafond * PP.doment.propre_entreprise.majoration, propre_765))
+    ri_propre = (min_(PP15.plafond, propre_306)
+                 + min_(PP15.plafond * PP15.doment.propre_entreprise.majoration, propre_765))
 
     return ri_propre + inv
         
