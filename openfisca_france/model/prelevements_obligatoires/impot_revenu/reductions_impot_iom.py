@@ -2144,12 +2144,12 @@ def formula_2025_01_01(foyer_fiscal, period, parameters):
     fhlt = foyer_fiscal('fhlt', period)  # Nouveaux investissements réalisés en 2025
     inv_66_306_594 = (fhgt + fhht + fhit + fhjt + fhkt + fhlt)
 
-    nr_66_306_594 = min_(inv_66_306_594 * (1 - P.taux_retro_1), max_(0, PP.plafond))
-    nr_56_306_38945 = min_(inv_56_306_38945 * (1 - P.taux_retro_2 ), max_(0, PP.plafond - nr_66_306_594))
+    nr_66_306_594 = min_(inv_66_306_594 * (1 - P15.taux_retro_1), max_(0, PP15.plafond))
+    nr_56_306_38945 = min_(inv_56_306_38945 * (1 - P15.taux_retro_2 ), max_(0, PP15.plafond - nr_66_306_594))
 
 
-    r_66_306_594 = nr_66_306_594 / (1 - P.taux_retro_1) * P.taux_retro_1
-    r_56_306_38945 = nr_56_306_38945 / (1 - P.taux_retro_2 ) * P.taux_retro_2 
+    r_66_306_594 = nr_66_306_594 / (1 - P15.taux_retro_1) * P15.taux_retro_1
+    r_56_306_38945 = nr_56_306_38945 / (1 - P15.taux_retro_2 ) * P15.taux_retro_2 
 
     inv = (nr_66_306_594 + nr_56_306_38945 + r_66_306_594 + r_56_306_38945)
 
