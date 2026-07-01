@@ -2107,8 +2107,12 @@ def formula_2025_01_01(foyer_fiscal, period, parameters):
 
     nr_66_306_594 = min_(inv_66_306_594 * (1 - P15.taux_retro_1), max_(0, PP15.plafond))
     nr_56_306_38945 = min_(inv_56_306_38945 * (1 - P15.taux_retro_2 ), max_(0, PP15.plafond - nr_66_306_594))
+    nr_66_306_594 = min_(inv_66_306_594 * (1 - P15.taux_retro_1), max_(0, PP15.plafond))
+    nr_56_306_38945 = min_(inv_56_306_38945 * (1 - P15.taux_retro_2 ), max_(0, PP15.plafond - nr_66_306_594))
 
 
+    r_66_306_594 = nr_66_306_594 / (1 - P15.taux_retro_1) * P15.taux_retro_1
+    r_56_306_38945 = nr_56_306_38945 / (1 - P15.taux_retro_2 ) * P15.taux_retro_2 
     r_66_306_594 = nr_66_306_594 / (1 - P15.taux_retro_1) * P15.taux_retro_1
     r_56_306_38945 = nr_56_306_38945 / (1 - P15.taux_retro_2 ) * P15.taux_retro_2 
 
@@ -2132,6 +2136,8 @@ def formula_2025_01_01(foyer_fiscal, period, parameters):
     
     propre_765 = (fhgw + fhhw + fhiw + fhjw + fhkw + fhlw)
 
+    ri_propre = (min_(PP15.plafond, propre_306)
+                 + min_(PP15.plafond * PP15.doment.propre_entreprise.majoration, propre_765))
     ri_propre = (min_(PP15.plafond, propre_306)
                  + min_(PP15.plafond * PP15.doment.propre_entreprise.majoration, propre_765))
 
