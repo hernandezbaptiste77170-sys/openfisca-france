@@ -4191,6 +4191,7 @@ class fhdw(Variable):
     # start_date = date(2017, 1, 1)
     definition_period = YEAR
 
+
 class fhis(Variable):
     cerfa_field = 'HIS'
     value_type = int
@@ -4199,6 +4200,7 @@ class fhis(Variable):
     label = "Investissements outre-mer dans le cadre de l'entreprise"
     # start_date = date(2022, 1, 1)
     definition_period = YEAR
+
 
 class fhit(Variable):
     cerfa_field = 'HIT'
@@ -4209,6 +4211,7 @@ class fhit(Variable):
     # start_date = date(2022, 1, 1)
     definition_period = YEAR
 
+
 class fhiu(Variable):
     cerfa_field = 'HIU'
     value_type = int
@@ -4217,6 +4220,7 @@ class fhiu(Variable):
     label = "Investissements outre-mer dans le cadre de l'entreprise"
     # start_date = date(2022, 1, 1)
     definition_period = YEAR
+
 
 class fhiw(Variable):
     cerfa_field = 'HIW'
@@ -4227,6 +4231,7 @@ class fhiw(Variable):
     # start_date = date(2022, 1, 1)
     definition_period = YEAR
 
+
 class fhjs(Variable):
     cerfa_field = 'HJS'
     value_type = int
@@ -4235,6 +4240,7 @@ class fhjs(Variable):
     label = "Investissements outre-mer dans le cadre de l'entreprise"
     # start_date = date(2023, 1, 1)
     definition_period = YEAR
+
 
 class fhjt(Variable):
     cerfa_field = 'HJT'
@@ -4245,6 +4251,7 @@ class fhjt(Variable):
     # start_date = date(2023, 1, 1)
     definition_period = YEAR
 
+
 class fhju(Variable):
     cerfa_field = 'HJU'
     value_type = int
@@ -4253,6 +4260,7 @@ class fhju(Variable):
     label = "Investissements outre-mer dans le cadre de l'entreprise"
     # start_date = date(2023, 1, 1)
     definition_period = YEAR
+
 
 class fhjw(Variable):
     cerfa_field = 'HJW'
@@ -4263,6 +4271,7 @@ class fhjw(Variable):
     # start_date = date(2023, 1, 1)
     definition_period = YEAR
 
+
 class fhks(Variable):
     cerfa_field = 'HKS'
     value_type = int
@@ -4271,6 +4280,7 @@ class fhks(Variable):
     label = "Investissements outre-mer dans le cadre de l'entreprise"
     # start_date = date(2024, 1, 1)
     definition_period = YEAR
+
 
 class fhkt(Variable):
     cerfa_field = 'HKT'
@@ -4281,6 +4291,7 @@ class fhkt(Variable):
     # start_date = date(2024, 1, 1)
     definition_period = YEAR
 
+
 class fhku(Variable):
     cerfa_field = 'HKU'
     value_type = int
@@ -4289,6 +4300,7 @@ class fhku(Variable):
     label = "Investissements outre-mer dans le cadre de l'entreprise"
     # start_date = date(2024, 1, 1)
     definition_period = YEAR
+
 
 class fhkw(Variable):
     cerfa_field = 'HKW'
@@ -4299,6 +4311,7 @@ class fhkw(Variable):
     # start_date = date(2024, 1, 1)
     definition_period = YEAR
 
+
 class fhls(Variable):
     cerfa_field = 'HLS'
     value_type = int
@@ -4307,6 +4320,7 @@ class fhls(Variable):
     label = "Investissements outre-mer dans le cadre de l'entreprise"
     # start_date = date(2025, 1, 1)
     definition_period = YEAR
+
 
 class fhlt(Variable):
     cerfa_field = 'HLT'
@@ -4317,6 +4331,7 @@ class fhlt(Variable):
     # start_date = date(2025, 1, 1)
     definition_period = YEAR
 
+
 class fhlu(Variable):
     cerfa_field = 'HLU'
     value_type = int
@@ -4325,6 +4340,7 @@ class fhlu(Variable):
     label = "Investissements outre-mer dans le cadre de l'entreprise"
     # start_date = date(2025, 1, 1)
     definition_period = YEAR
+
 
 class fhlw(Variable):
     cerfa_field = 'HLW'
